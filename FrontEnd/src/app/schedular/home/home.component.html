@@ -1,0 +1,22 @@
+ 
+<button class="btn-create " routerLink="/api/v1/scedular/create_schedule">+</button>
+
+<div class="container">
+     <div *ngFor="let task of allTasksList ;trackBy:trackTasks">
+      <div class="card">
+         <header class="card__header">
+            <h3 class="taskname">{{task.taskName}}</h3>
+            <div class="operations">
+            <i class="fa fa-edit" [routerLink]="['/api/v1/scedular/update_schedule',task._id]" (click)="updateTask(task._id)"></i>
+            <i class="fa fa-trash fa-1x" style="color:rgb(243, 22, 22)" (click)="deleteTask(task._id)"></i>
+            </div>
+         </header>
+         <p class="card__description"> {{task.taskDescription}}</p>
+         <p>{{task.taskDate}}</p>
+      </div>
+   </div>
+</div>
+
+
+
+

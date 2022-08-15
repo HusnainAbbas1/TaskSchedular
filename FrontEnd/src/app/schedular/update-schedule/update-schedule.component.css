@@ -1,0 +1,52 @@
+.alert-danger {
+    height: 20px;
+    background-color: rgb(255, 163, 163);
+    border-radius: 5px;
+    padding: 0.375rem 0.75rem;
+  }
+  .form-control {
+    width: 300px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  .container {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(255, 0, 0);
+  }
+  .label {
+    margin-top: 20px;
+    font-size: medium;
+    font-weight: bold;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  .validation-width {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-primary {
+    background-color: rgb(15, 173, 187);
+    width: 80px;
+    height: 40px;
+    border-radius: 7px;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: large;
+    margin-top: 10px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  

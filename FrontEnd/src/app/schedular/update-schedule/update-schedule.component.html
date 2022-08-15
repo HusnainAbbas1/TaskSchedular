@@ -1,0 +1,58 @@
+<form [formGroup]="form"  (ngSubmit)="upDate()">
+    <div class="container">
+      <div class="validation-width">
+        <label class="label">Task Name</label>
+        <input
+          name="taskName"
+          id="taskName"
+          type="text"
+          formControlName="taskName"
+          class="form-control"
+          placeholder="Enter Name"
+        />
+        <div *ngIf="taskName?.touched && taskName?.invalid" class=" alert-danger">
+          
+          <div *ngIf="taskName?.errors?.['required']">  Task Name Is Required </div>
+          <div *ngIf="taskName?.errors?.['minlength']" >
+            Task Name should be greater than {{taskName?.errors?.['minlength']?.requiredLength}} characters
+          </div>
+          
+        </div>
+      </div>
+  
+      <div class="validation-width">
+        <label class="label"> Task Description</label>
+        <textarea
+          name="taskDescription"
+          id="taskDescription"
+          type="taskDescription"
+          formControlName="taskDescription"
+          class="form-control"
+          placeholder="Enter Description"
+        ></textarea>
+
+        <div *ngIf="taskDescription?.touched && taskDescription?.invalid" class="alert alert-danger">
+          <div *ngIf="taskDescription?.errors?.['required']"> Task Description Is Required </div>
+          <div *ngIf="taskDescription?.errors?.['minlength']" >
+          Task Description should be greater than {{taskDescription?.errors?.['minlength']?.requiredLength}} characters
+        </div>
+           
+        </div>
+      </div>
+
+      <div class="validation-width">
+        <label class="label"> Date</label>
+        <input
+          name="taskDate"
+          id="taskDescription"
+          type="date"
+          formControlName="taskDate"
+          class="form-control"
+          placeholder="Enter your taskDescription"
+        />    
+       </div>
+  
+      <button class="btn-primary">Update</button>
+    </div>
+  </form>
+  
