@@ -3,7 +3,8 @@ const app = express();
 
 const AuthRoutes = require("./Routes/authRoutes"); 
 const schedularTasksRoutes = require('./Routes/schedularTasksRoutes')
- 
+const managerRoutes = require("./Routes/ManagerRoutes");
+
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const session = require("express-session");
@@ -17,5 +18,6 @@ app.use(morgan("dev"));
  
 app.use("/api/v1/auth", AuthRoutes);  
 app.use("/api/v1/scedular",schedularTasksRoutes);
+app.use("/api/v1/manager",managerRoutes);
 
 module.exports = app;

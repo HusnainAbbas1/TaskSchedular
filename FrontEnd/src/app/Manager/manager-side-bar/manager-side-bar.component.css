@@ -1,0 +1,89 @@
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    
+  }
+  
+  .c-products {
+    display: grid;
+    grid-template-columns:  1fr;
+ 
+     
+    /* @media (min-width: 600px) {
+      //grid-template-columns: 1fr 1fr 1fr;
+      //grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @media (min-width: 800px) {
+      //grid-template-columns: 1fr 1fr 1fr 1fr;
+      //grid-template-columns: repeat(4, 1fr);
+    }
+    
+    ///// In columns werken - flexboxlike
+    //grid-auto-flow: column; 
+    //grid-template-rows: 1fr 1fr 1fr;
+    
+    ///// Responsive in 1 lijn
+    // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+  }
+  
+  /* .c-product {
+    background-color: tomato;
+    padding: 1rem;
+    order: 2;
+  } */
+  
+   .c-product--promo {
+    background-color: lightgreen;
+    order: 1;
+  }
+/*   
+  
+  //// Just some styling
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+   */
+  .sidebar {
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    height: 105vh;
+    padding-top: 40px;
+   
+   
+  }
+  .sidebar>ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+ 
+    height: 30%;
+  }
+.sidebar>ul>li{
+  background: #2569e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 6px;
+  width: 180px;
+  margin-right: 40px;
+  cursor: pointer;
+ 
+}
+.sidebar>ul>li>a{
+ 
+   text-decoration: none;
+   
+   color: white;
+   width: 100px;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: 200;
+}
+
+  

@@ -7,18 +7,20 @@ import { CrudService } from "../services/crud-service.service";
     providedIn: 'root'
   })
 export class AuthInterceptor implements HttpInterceptor{
+
+        intercept(req: HttpRequest<any>, next: HttpHandler) {
+
+            let token = localStorage.getItem('token')  || ""
+            if(token) {
+                token  = JSON.parse(localStorage.getItem('token') as string);
+            }
+            const authRequest = req.clone({
+                headers:req.headers.set("Authorization",token)
+            });
+            return next.handle(authRequest);
+        }
     
-    // constructor(private authService:CrudService){}
-    // token = this.authService.getToken();
+    
 
-    token  = JSON.parse(localStorage.getItem('token') as string);
 
-intercept(req: HttpRequest<any>, next: HttpHandler) {
- 
-    const authRequest = req.clone({
-        headers:req.headers.set("Authorization",this.token)
-    });
-
-    return next.handle(authRequest);
-}
 }

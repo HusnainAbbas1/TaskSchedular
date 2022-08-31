@@ -1,0 +1,141 @@
+body {
+  background: #edf2f8;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 100px;
+  padding-bottom: 30px;
+  margin-top: 10px; 
+  }
+  
+.container {
+  max-width: 1440px;
+  padding: 10px;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  /*grid-template-rows: repeat(2,1fr); */
+  row-gap: 10px;
+  column-gap: 10px; 
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.card__header {
+  background-color: #00FFEF;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.taskname {
+  display: flex;
+  flex: 15;
+}
+
+.operations {
+  display: flex;
+  justify-content: space-between;
+  flex: 4;
+}
+
+i {
+  cursor: pointer;
+}
+
+.card__description {
+  max-width: 400px;
+
+  word-wrap: break-word;
+}
+
+.card:nth-of-type(1) {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.card:nth-of-type(2) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.btn-create {
+  border-radius: 50%;
+  background-color: #2569e6;
+  border: 4px solid rgb(255, 255, 255);
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  float: right;
+  margin-right: 60px;
+  margin-top: 40px;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+
+  height: auto;
+}
+
+.liststyle__none {
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.box {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: black;
+  padding: 10px 0px 0px 19px;
+}
+
+@media(max-width:900px){
+    
+.container {
+    max-width: 1440px;
+    padding: 10px;
+    display: grid;
+    margin-top: 100px;
+    grid-template-columns: repeat(2, 1fr);
+    /*grid-template-rows: repeat(2,1fr); */
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+}
+
+
+@media(max-width:500px){
+    
+    .container {
+        max-width: 1440px;
+        padding: 10px;
+        display: grid;
+        margin-top: 100px;
+        grid-template-columns: repeat(1, 1fr);
+        /*grid-template-rows: repeat(2,1fr); */
+        row-gap: 10px;
+        column-gap: 10px;
+      }
+    }

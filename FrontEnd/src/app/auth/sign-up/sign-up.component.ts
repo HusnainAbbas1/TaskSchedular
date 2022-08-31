@@ -1,5 +1,7 @@
-import { SchedularService } from '../../services/schedular.service';
-import { Component, OnInit } from '@angular/core';
+import { CrudService } from './../../services/crud-service.service';
+// import { AuthService } from './../../services/auth.service';
+// import { SchedularService } from '../../services/schedular.service';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment.dev';
 import { HttpService } from '../../http.service';
@@ -10,14 +12,16 @@ import { HttpService } from '../../http.service';
   styleUrls: ['./sign-up.component.css']
 })
 
-export class SignUpComponent   {
+export class SignUpComponent  implements OnInit ,AfterViewInit
+ {
   form:FormGroup;
 
-  constructor(private fb:FormBuilder,private service:SchedularService){
+  constructor(private fb:FormBuilder,private authService:CrudService){
    this.form = fb.group({
      userName:['',[Validators.required,Validators.minLength(5)]],
      password:['',[Validators.required,Validators.minLength(8)]]
    })
+   console.log('child');
   }
   
   signUp( ){ 
@@ -26,7 +30,7 @@ export class SignUpComponent   {
      password:this.form.value.password
    }
  
-   this.service.post(environment.createUserURL,body).subscribe((response:any)=>{
+   this.authService.post(environment.createUserURL,body).subscribe((response:any)=>{
    console.log('response ',response);
    }); 
   }
@@ -39,7 +43,14 @@ export class SignUpComponent   {
   public get userName(){
    return this.form.get('userName');
   }
- 
+
+  ngOnInit(): void {
+    console.log('child');
+  }
+
+  ngAfterViewInit(): void {
+    console.log('after view')
+  }
  
  }
  

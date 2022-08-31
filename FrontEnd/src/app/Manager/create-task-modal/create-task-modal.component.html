@@ -1,0 +1,122 @@
+<!-- The Modal -->
+<div *ngIf="display === 'open'">
+
+    <!-- Modal content -->
+    <div class="modal_open">
+  
+      <div class="modal-content">
+   
+        <span class="close" (click)="close()">&times;</span>
+        <div class="form">
+          <h1 class="heading">Create Task</h1>
+          <form [formGroup]="form" (ngSubmit)="create()">
+            <div class="container">
+
+              <div class="validation-width">
+                <label class="label">Task Name</label>
+                <input
+                  name="taskName"
+                  id="taskName"
+                  type="text"
+                  formControlName="taskName"
+                  class="form-control"
+                  placeholder="Enter Task Name"
+                />
+              </div>
+
+              <div class="validation-width">
+                <label class="label">Project Name</label>
+                <input
+                  name="projectName"
+                  id="projectName"
+                  type="text"
+                  formControlName="projectName"
+                  class="form-control"
+                  placeholder="Enter project Name"
+                />
+              </div>
+
+
+              <div class="validation-width">
+                <label class="label">Lead Id</label>
+                <input
+                  name="leadId"
+                  id="leadId"
+                  type="text"
+                  formControlName="leadId"
+                  class="form-control"
+                  placeholder="Enter Lead Id "
+                />
+              </div>
+
+
+
+
+
+
+              <div class="validation-width-dropdown">
+                <label class="label">Assign To </label>
+
+                <select
+                  name="assignTo"
+                  id="assignTo"
+                  class="form-control"
+                  type="text"
+                  formControlName="assignTo"
+                >  
+                  <option selected disabled> Choose user</option>
+                  <option *ngFor="let user of unAssignedUsers"   [value]="user.userName">
+                    {{ user.userName }}
+                  
+                  </option>
+                
+                </select>
+              </div>
+
+  
+
+              <div class="validation-width">
+                <label class="label">Task Description</label>
+                <input
+                  name="taskDescription"
+                  id="taskDescription"
+                  type="text"
+                  formControlName="taskDescription"
+                  class="form-control"
+                  placeholder="Enter Task Description"
+                />
+              </div>
+  
+              <div class="validation-width-date " >
+                <label class="label">Task Date</label>
+                <input
+                  name="taskDate"
+                  id="taskDate"
+                  type="date"
+                  formControlName="taskDate"
+                  class="form-control"
+                  placeholder="Enter Task Date"
+                />
+              </div>
+   
+  
+          
+              <!-- <div class="skills">
+                <label>Skills</label>
+                <ng-multiselect-dropdown
+                  [settings]="dropdownSettings"
+                  [data]="skills"
+                  formControlName="skills"
+                  style="width: 100%; margin-top: 20px; border-radius: 5px"
+                >
+                </ng-multiselect-dropdown>
+              </div> -->
+  
+              <button class="btn-primary">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

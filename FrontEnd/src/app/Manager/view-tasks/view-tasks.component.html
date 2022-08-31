@@ -1,0 +1,93 @@
+<div class="todo-navbar">
+ 
+  <div class="todo-navbar-buttons">
+    <ul>
+      <li (click)="allTasks()"><a>Tasks</a></li>
+      <li (click)="today()"><a>Today</a></li>
+    </ul>
+  </div>
+
+<div class="right-side">
+  <div class="dropdown">
+    <select
+      name="assignTo"
+      id="assignTo"
+      class="form-control"
+      type="text"
+      formControlName="assignTo"
+       
+      (change)="runFilter($event)"
+    >
+      <option [ngValue]="undefined" selected>Filter</option>  
+      <option  >In Progress</option>
+      <option   >Done</option>
+    </select>
+  </div>
+
+  <div>
+    <button class="btn-create" (click)="openCreateTaskModal()">+</button>
+  </div>
+
+</div>
+
+</div>
+
+<div class="container">
+  <div *ngFor="let task of allTasksList; trackBy: trackTasks">
+    <div class="card">
+      <header class="card__header">
+        <h3 class="taskname">{{ task.taskName }}</h3>
+        <div class="operations">
+          <input
+            id="checkFollower"
+            type="checkbox"
+            [checked]="task.taskStatus"
+            aria-label="Follower input"
+            class="task_checkbox"
+            (click)="checkBox(task.assigneeId, task._id, task.taskStatus)"
+          />
+
+          <i
+            class="fa fa-pencil fa-2x"
+            [routerLink]="['/api/v1/scedular/update_schedule', task._id]"
+            (click)="updateTask(task._id)"
+          >
+          </i>
+
+          <i
+            class="fa fa-trash fa-2x"
+            style="color: #ff0000fa"
+            (click)="deleteTask(task._id)"
+          >
+          </i>
+        </div>
+      </header>
+      <p class="card__description">{{ task.taskDescription }}</p>
+      <p>{{ task.createdAt }}</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer__container">
+  <ul *ngFor="let _ of [].constructor(totalPages); let i = index">
+    <li class="liststyle__none box">
+      <a class="link" routerLink="/api/v1/manager/view_tasks" (click)="onChangePage(i + 1)">{{
+        i + 1
+      }}</a>
+    </li>
+  </ul>
+</footer>
+
+<!-- 
+  <footer>
+    <ul class="footer__style" *ngFor="let pageNO of totalPages">
+      <li class="box">
+        <a class="link"   
+          routerLink="/home"
+          [queryParams]="{ page: pageNO, pageSize: tasksPerPage }"
+          (click)="onChangePage(pageNO)"
+          >{{ pageNO }}</a
+        >
+      </li>
+    </ul>
+  </footer> -->

@@ -1,0 +1,39 @@
+<div class="btn-container">
+  <button class="btn-create" (click)="openCreateUserModal()">+</button>
+</div>
+
+<div class="container">
+  <div *ngFor="let user of users">
+    <div class="card">
+      <div class="card_button_move">
+        <header class="card__header">
+          <img src="../../../assets/image-daniel.jpg" class="card__img" />
+          <div>
+            <h3>{{ user.userName }}</h3>
+            <p>{{ user.role }}</p>
+            <p>Lead Id : {{ user.leadId }}</p>
+          </div>
+        </header>
+
+        <div class="card_header_buttons">
+          <button class="update-btn" (click)="openUpdateMOdal(user._id)">
+            Update
+          </button>
+          <button class="delete-btn" (click)="Delete(user._id)">Delete</button>
+        </div>
+      </div>
+              
+      <div
+        class="current_project_card"
+        [ngClass]="{
+          'current_project_card_changeStatus': user.taskStatus
+        }"
+      >
+ 
+        <h4>{{ user.currentProject }}</h4>
+        <p>“{{ user.projectDescription }}”</p>
+      </div>
+
+    </div>
+  </div>
+</div>

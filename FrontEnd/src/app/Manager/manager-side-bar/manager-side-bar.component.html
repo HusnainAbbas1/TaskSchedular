@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+
+<div class="wrapper">
+  
+  <div class="sidebar">
+      <ul>
+        <li><i class="fa fa-dashboard" aria-hidden="true" style="color:white;"></i><a routerLink="/api/v1/manager/dashboard">DashBoard</a></li>       
+        <li><i class="fa fa-tasks" aria-hidden="true" style="color:white;"></i><a routerLink="/api/v1/manager/view_tasks">Tasks</a></li>
+        <li><i class="fa fa-users" aria-hidden="true"style="color:white;"></i><a routerLink="/api/v1/manager/view_users">Users</a></li>
+      </ul>
+  </div>
+
+
+  <div class="c-products">
+    <router-outlet></router-outlet>
+     <app-create-user-modal></app-create-user-modal>
+     <app-update-modal></app-update-modal>
+     <app-create-task-modal></app-create-task-modal>
+  </div>
+  
+</div>

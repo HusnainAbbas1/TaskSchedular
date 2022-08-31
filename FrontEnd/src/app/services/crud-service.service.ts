@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, OnInit } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { catchError } from 'rxjs';
 
 @Injectable({
@@ -8,21 +9,26 @@ import { catchError } from 'rxjs';
 
 export class CrudService {
   
-  constructor(@Inject(String) private url: string, private http: HttpClient) {}
+  constructor( private http: HttpClient) {}
 
   get(path: string) {
+    console.log('from today get  service');
     return this.http.get(path);
   }
    
-  post(url: string, body: object) {
+  post(url: string, body: any) {
+    console.log('from http',url,body);
+     
     try {
       return this.http.post(url, body);
     } catch (e: any) {
-      return e.message;
-    }
+      console.log('e');
+      return e;
+     }
   }
   
   put(url:string,body:any) {
+    console.log(url+'/'+body.id);
     return this.http.put(url+'/'+body.id,body);
   }
   
@@ -35,14 +41,24 @@ export class CrudService {
   //   body: { foo: body }
   // }
   //   );
-  const id = body.taskId;
+  const id = body.id;
   return this.http.delete(url+'/'+id);
   }
   
-  getToken(){
-    console.log('from crud servixec')
-    let token:string = localStorage.getItem('token') as string;
-    console.log(token);    
-    return JSON.parse(token);
+  isAuthenticate(){
+     let token:string = localStorage.getItem('token') as string;
+     return (token)?true:false;
   }
+  
+  getRole(){
+  //  let tokenPayLoad =  this.jwtHelper.decodeToken(localStorage.getItem('token') as string);
+  //  console.log(tokenPayLoad);
+  return 'manager';
+}
+  
+  // ngOnInit(): void {
+  //   let tokenPayLoad =  this.jwtHelper.decodeToken(localStorage.getItem('token') as string);
+  //  console.log(tokenPayLoad);
+  // }  
+ 
 }

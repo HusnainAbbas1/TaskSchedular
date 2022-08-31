@@ -1,0 +1,104 @@
+<!-- The Modal -->
+<div *ngIf="display === 'open'">
+
+  <!-- Modal content -->
+  <div class="modal_open">
+
+    <div class="modal-content">
+ 
+      <span class="close" (click)="close()">&times;</span>
+      <div class="form">
+        <h1 class="heading">Create User</h1>
+        <form [formGroup]="form" (ngSubmit)="create()">
+          <div class="container">
+            <div class="validation-width">
+              <label class="label">User Name</label>
+              <input
+                name="userName"
+                id="userName"
+                type="text"
+                formControlName="userName"
+                class="form-control"
+                placeholder="Enter User Name"
+              />
+            </div>
+
+            <div class="validation-width">
+              <label class="label">Role</label>
+              <input
+                name="role"
+                id="role"
+                type="text"
+                formControlName="role"
+                class="form-control"
+                placeholder="Enter Role"
+              />
+            </div>
+
+            <div class="validation-width">
+              <label class="label">Password</label>
+              <input
+                name="password"
+                id="password"
+                type="text"
+                formControlName="password"
+                class="form-control"
+                placeholder="Enter Role"
+              />
+            </div>
+
+            <div class="validation-width">
+              <label class="label">Current Project</label>
+              <input
+                name="currentProject"
+                id="currentProject"
+                type="text"
+                formControlName="currentProject"
+                class="form-control"
+                placeholder="Enter Project Name"
+              />
+            </div>
+
+            <div class="validation-width">
+              <label class="label">Lead Id</label>
+              <input
+                name="leadId"
+                id="leadId"
+                type="text"
+                formControlName="leadId"
+                class="form-control"
+                placeholder="Enter Lead Name"
+              />
+            </div>
+
+            <div class="validation-width">
+              <label class="label">Project Description</label>
+              <textarea
+                name="projectDescription"
+                id="projectDescription"
+                type="text"
+                formControlName="projectDescription"
+                class="form-control"
+                placeholder=" Description"
+              ></textarea>
+            </div>
+
+        
+            <!-- <div class="skills">
+              <label>Skills</label>
+              <ng-multiselect-dropdown
+                [settings]="dropdownSettings"
+                [data]="skills"
+                formControlName="skills"
+                style="width: 100%; margin-top: 20px; border-radius: 5px"
+              >
+              </ng-multiselect-dropdown>
+            </div> -->
+
+            <button class="btn-primary">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

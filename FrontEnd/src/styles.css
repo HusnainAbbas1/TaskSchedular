@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~font-awesome/css/font-awesome.css';
 
+
 body {
-    background: #edf2f8;
+  background: #edf2f8;
+  margin: 0;
+  padding: 0;
   }
   
+
+

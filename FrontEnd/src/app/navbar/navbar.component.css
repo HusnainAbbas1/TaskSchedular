@@ -1,43 +1,124 @@
+/* Global */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  
 }
+img{
+  height: 80px;
+  width: 80px;
+ 
+  padding: 0px;
+  margin: 0px;
 
-body {
-  font-family: sans-serif;
-  font-size: 16px;
 }
-
-nav {
-  background: royalblue;
-  padding: 0 15px;
-  color: white;
-}
-
-.menu {
-  list-style-type: none;
-}
-.logo {
-  font-size: 20px;
-  padding: 7.5px 10px 7.5px 0;
-
-  flex: 20;
-}
-
-.items {
-  flex: 4;
-}
-/* mobile view */
-.menu {
+/* Header */
+header {
+  
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  /* padding: 20px 50px; */
+  background-color:white ;
+  box-shadow: 0 1px 8px #ddd;
+  padding-left: 30px;
+  padding-top: 5px;
+ 
 }
-.menu li a {
-  display: block;
+
+#nav-title {
+   font-size: 1.5em;
+}
+
+header li {
+  list-style: none;
+  display:inline;
+  padding: 0 20px;
+  
+ 
+}
+header ul{
+  padding: 20px;
+  width: 500px;
+ }
+ 
+header a {
   text-decoration: none;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+header a:hover {
+  color: #000000;
+}
+ 
+
+.logout-btn{
+  background-color: #2569e6;
   color: white;
+  padding: 10px;
+  border-radius:5px;
+  border: none;
+  width: 150px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: 250;
+  cursor: pointer;
+   
+}
+.fa{
+  margin-right: 17px;
+   
+}
+.wrap{
+  width: 50%;
+  border: 10 px solid black;
+}
+
+.searchButton {
+  /* width: 40px;
+  height: 36px;
+  border: 1px solid #3ef5d3;
+  background: #3ef5d3;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  padding-left: 8px;  */
+  height:42px;
+  width:30px;
+  padding: 1px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  border: 5px solid #00FFEF;
+  background: #00FFEF;
+  color: #fff;
+}
+.searchTerm {
+  
+  height:22px;
+  width:50%;
+  padding: 5px;
+ border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+  color: #000000;
+  border: 5px solid #00FFEF;
+  /* width: 50%;
+  border: 3px solid #3ef5d3;
+  border-right: none;
+  padding: 5px;
+  height: 15px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  padding-top: 10px; */
+}
+.searchTerm:focus{
+  border: 5px solid #00FFEF;
+  
+  background-color: transparent;
+  resize: none;
+  outline: none;
 }

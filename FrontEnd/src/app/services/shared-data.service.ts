@@ -5,10 +5,13 @@ import { BehaviorSubject } from 'rxjs';
 export class SharedDataService {
   private messageSource = new BehaviorSubject({});
   getUpdateBody = this.messageSource.asObservable();
+ 
+  
 
   constructor() { }
 
   setUpdateBody(body: object) {
     this.messageSource.next(body)
   }
+  
 }
