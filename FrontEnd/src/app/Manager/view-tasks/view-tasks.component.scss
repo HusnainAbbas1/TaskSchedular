@@ -10,7 +10,7 @@ body {
 
   .todo-navbar-buttons {
     display: inline;
-    width: 300px;
+    width: 500px;
     display: flex;
     justify-content: center;
     
@@ -30,11 +30,10 @@ body {
     text-decoration: none;
   }
   .todo-navbar-buttons ul li a:hover {
-    background: #2569e6;
+ 
     cursor: pointer;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
+ 
+    
   }
 }
 .right-side{
@@ -44,6 +43,7 @@ body {
   justify-content: space-evenly;
   margin-left: 20px;
   width: 300px;
+
 
 }
  
@@ -59,6 +59,22 @@ body {
    outline: none;
 }
 
+.form-control-dropdown{
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  border: 1px solid #2168ae;
+  border-radius: 8px;
+   outline: none; 
+}
+
+.option-padding{
+  padding-right: 30px;
+  border-radius: 5px;
+}
 .btn-container {
   display: flex;
   justify-content: space-between;
@@ -86,10 +102,14 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  height: 250px;
 }
-
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+  transform: translate3d(0px, -2px, 0px);
+}
 .card__header {
-  background-color: #00ffef;
+  background-color: #ffffff;
   border-radius: 10px;
   color: white;
   padding: 10px;
@@ -97,19 +117,33 @@ body {
   align-items: center;
 }
 
+.card-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .taskname {
   display: flex;
   flex: 15;
 }
-
+.all-today{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+  
+  
+}
 .operations {
   display: flex;
-  justify-content: space-between;
-  flex: 4;
+   
+  justify-content: flex-end;
+  width: 50%;
 }
 .task_checkbox {
-  width: 33px;
-  height: 28px;
+  width: 15px;
+  height: 20px;
   margin-right: 10px;
   outline: none;
   border: none;
@@ -146,6 +180,7 @@ i {
   cursor: pointer;
   float: right;
   margin-right: 60px;
+  padding-bottom: 40px;
 }
 
 .footer__container {
@@ -153,12 +188,15 @@ i {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-
   height: auto;
+   
 }
 
 .liststyle__none {
+  
+  border: 1px solid black;
   list-style-type: none;
+ 
 }
 
 .link {
@@ -171,7 +209,7 @@ i {
   border-radius: 5px;
   background-color: #fff;
   color: black;
-  padding: 10px 0px 0px 19px;
+  padding: 0px 25px 10px 19px;
 }
 .fa-pencil {
   margin-right: 10px;

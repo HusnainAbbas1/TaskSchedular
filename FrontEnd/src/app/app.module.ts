@@ -1,3 +1,5 @@
+ 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponentBootstrap } from './auth/login copy/login.component';
 import { TodayTaskComponent } from './Manager/today-task/today-task.component';
 import { NotFoundComponent } from './NotFound/not-found/not-found.component';
@@ -38,6 +40,8 @@ import { UpdateModalComponent } from './manager/update-modal/update-modal.compon
 import { ViewTasksComponent } from './manager/view-tasks/view-tasks.component';
 import { CreateTaskModalComponent } from './manager/create-task-modal/create-task-modal.component';
 import { TaskUpdateModalComponent } from './manager/task-update-modal/task-update-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+ 
  
 @NgModule({
   declarations: [
@@ -65,7 +69,7 @@ import { TaskUpdateModalComponent } from './manager/task-update-modal/task-updat
     BrowserModule,
     ReactiveFormsModule,
     NgMultiSelectDropDownModule.forRoot(),
-    
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
    
@@ -94,6 +98,7 @@ import { TaskUpdateModalComponent } from './manager/task-update-modal/task-updat
       //   component: HomeComponent,
       //   canActivate:[AuthGuard,MemberGuard]
       // },
+      
       {
         path: 'api/v1/manager',
         component: ManagerSideBarComponent,
@@ -103,7 +108,7 @@ import { TaskUpdateModalComponent } from './manager/task-update-modal/task-updat
           { path: 'view_tasks', component: ViewTasksComponent },
           { path: 'today_tasks', component: TodayTaskComponent },
           { path: 'view_users', component: ViewUsersComponent },
-
+          
          ],
       },
       
@@ -137,6 +142,7 @@ import { TaskUpdateModalComponent } from './manager/task-update-modal/task-updat
       //   canActivate:[AuthGuard]
       // },
     ]),
+        NgbModule,
   ],
   providers: [
     HttpService,

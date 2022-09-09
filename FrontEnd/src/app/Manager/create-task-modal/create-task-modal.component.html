@@ -1,4 +1,6 @@
 <!-- The Modal -->
+<!-- we use ngIf directive here this modal only open when value of dispaly is true 
+     previously we saw that we listen continously in TS file when value of display variable true this modall will open  -->
 <div *ngIf="display === 'open'">
 
     <!-- Modal content -->
@@ -87,31 +89,7 @@
                 />
               </div>
   
-              <div class="validation-width-date " >
-                <label class="label">Task Date</label>
-                <input
-                  name="taskDate"
-                  id="taskDate"
-                  type="date"
-                  formControlName="taskDate"
-                  class="form-control"
-                  placeholder="Enter Task Date"
-                />
-              </div>
-   
-  
-          
-              <!-- <div class="skills">
-                <label>Skills</label>
-                <ng-multiselect-dropdown
-                  [settings]="dropdownSettings"
-                  [data]="skills"
-                  formControlName="skills"
-                  style="width: 100%; margin-top: 20px; border-radius: 5px"
-                >
-                </ng-multiselect-dropdown>
-              </div> -->
-  
+     
               <button class="btn-primary">Create</button>
             </div>
           </form>

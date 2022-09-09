@@ -15,7 +15,7 @@
     border-radius: 10px;
   }
   .heading {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   /* Modal Content */
@@ -26,7 +26,7 @@
     box-shadow: rgba(108, 231, 247, 0.16) 10px 20px 15px,
       rgba(3, 212, 194, 0.23) 10px 20px 15px;
     width: 27%;
-    height: 82%;
+    height: 95%;
     border-radius: 10px;
    
   }

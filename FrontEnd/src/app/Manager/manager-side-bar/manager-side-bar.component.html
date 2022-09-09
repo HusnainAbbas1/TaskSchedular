@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar>
 
 <div class="wrapper">
   
@@ -18,4 +18,68 @@
      <app-create-task-modal></app-create-task-modal>
   </div>
   
-</div>
+</div> -->
+
+  <!-------------------------------------------------- Navbar --------------------------------------------------------------------->
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-position">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Schedular</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button *ngIf="isAuthenticate()" (click)="logout()" class="btn btn-outline-success" type="submit">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+ 
+    <!-------------------------------------------------- Sidebar --------------------------------------------------------------------->
+    
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      
+      <ul  class="sidebar-nav nav-pills  nav-stacked" id="menu">
+        
+        <li routerLink="/api/v1/manager/view_tasks" class="nav-item mt-3 ml-3  sidebar-align  ">
+         <i class="fa fa-tasks" aria-hidden="true" style="color:white;"></i> 
+         <a class="margin"  >Tasks</a>
+        </li>
+       
+        <li routerLink="/api/v1/manager/view_users" class="nav-item mt-3 ml-3  sidebar-align ">
+          <i class="fa fa-users" aria-hidden="true" style="color:white;"></i> 
+          <a class="margin" >Users</a>
+         </li>
+ 
+      </ul>
+    </div>
+    
+    
+    <!-- -----------------------------------------Page Content--------------------------------------------------------- -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid  ">
+        <div class="row " >
+          <div class="col-lg-12">
+            <div class="c-products">
+              <router-outlet></router-outlet>
+               <app-create-user-modal></app-create-user-modal>
+               <app-update-modal></app-update-modal>
+               <app-create-task-modal></app-create-task-modal>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+ 

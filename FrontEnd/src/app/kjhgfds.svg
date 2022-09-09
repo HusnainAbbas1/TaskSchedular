@@ -1,0 +1,131 @@
+
+<style>
+    #path1{
+    fill: url(#path1)
+}
+#path2{
+    fill: url(#path2)
+}
+#path3{
+    fill: url(#path3);
+}
+#path0{
+    fill: aqua;
+}
+#path00{
+    fill: red;
+}
+svg{
+    border: 1px solid white;
+
+}
+</style>
+
+
+
+
+
+<!-- 
+<svg height="500" width="700" viewBox="-50 -40 150 150" class="svg-1">
+
+
+    <defs>
+   <linearGradient id="path1" x1="0%" y1="50%" x2="100%" y2="50%" >
+    
+          <stop offset="6%" style="stop-color:rgb(255,255,255);stop-opacity:1.00" />
+          <stop offset="81%" style="stop-color:rgb(0,212,42);stop-opacity:1.00" />
+
+    </linearGradient>
+  </defs>
+
+  <defs>
+   <linearGradient id="path2" x1="0%" y1="50%" x2="100%" y2="50%" >
+    
+          <stop offset="100%" style="stop-color:rgb(243,198,47);stop-opacity:1.00" />
+          <stop offset="100%" style="stop-color:rgb(238,130,238);stop-opacity:1.00" />
+
+    </linearGradient>
+  </defs>
+
+  <defs>
+   <linearGradient id="path3" x1="0%" y1="50%" x2="100%" y2="50%" >
+    
+          <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1.00" />
+          <stop offset="31%" style="stop-color:rgb(248,95,87);stop-opacity:1.00" />
+
+    </linearGradient>
+  </defs>
+
+ 
+
+<path  id="path1"  d=" 
+M 10 20 
+A 40,40 0 0 1 28,-15.9
+L 30.5 -9
+A 40,40 0 0 0 16,20 
+M 10 20
+
+ " />
+
+<path  id="path2"  d=" 
+M 32 -18.5
+A 40,40 0 0 1 79,-17.9
+L 78.5 -10.9
+A 40,40 0 0 0 34,-11.8
+
+ <!-- L 78 1
+A 40,40 0 0 0 81,-12
+L 29.5 -5.6 -->
+  
+ " />
+ 
+<path  id="path3"  d=" 
+ M 82.9 -15
+ A 40,40 0 0 1 100,20
+ L 94 20
+ A 40,40 0 0 0 81.5,-8.5
+
+ " />
+ 
+<circle cx="55" cy="19" r="2.5" fill="white" />
+<line x1="55.4" y1="17.59" x2="60" y2="-9" style="stroke:white;stroke-width:1" />
+<path d="
+M 55 20
+
+L 60 0
+
+" />
+ 
+
+
+</svg>
+  
+   -->
+  
+   
+<svg width="1700" height="1700" xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <defs>
+   <linearGradient id="lgrad" x1="0%" y1="50%" x2="100%" y2="50%" >
+    
+          <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1.00" />
+          <stop offset="50%" style="stop-color:rgb(28,217,101);stop-opacity:1.00" />
+          <stop offset="100%" style="stop-color:rgb(244,202,64);stop-opacity:1.00" />
+
+    </linearGradient>
+  </defs>
+
+     
+    <circle cx="150" cy="150" r="100" fill="none" stroke="url(#lgrad)" stroke-width="20" stroke-dasharray="120 10 120" stroke-dashoffset="50"
+ transform="rotate(-95)"      transform-origin="center" />
+   
+ 
+</svg>
+ 
+ 
+  
+
+  
+  
+ 

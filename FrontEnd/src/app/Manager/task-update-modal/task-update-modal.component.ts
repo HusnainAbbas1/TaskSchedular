@@ -17,7 +17,7 @@ export class TaskUpdateModalComponent implements OnInit {
     private fb:FormBuilder,
     private userService :CrudService
     ) { 
-
+ // again this is reactive form variables for all input fields
       this.form = fb.group({
         userName: ['', [Validators.required, Validators.minLength(2)]],
         role: ['', [Validators.required, Validators.minLength(2)]],
@@ -58,7 +58,7 @@ export class TaskUpdateModalComponent implements OnInit {
 
   update(){
     
-    this.updateBody = {
+    this.updateBody = {      // enclose all the form variables in one JS Object
       userName:this.form.value.userName,
       role:this.form.value.role,
       currentProject:this.form.value.currentProject,
@@ -67,8 +67,8 @@ export class TaskUpdateModalComponent implements OnInit {
       password:this.form.value.password,
       id:this.id
     };
-    console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu',this.updateBody);
-    this.userService.put(environment.UpdateUser,this.updateBody).subscribe((res)=>{
+   
+    this.userService.put(environment.UpdateUser,this.updateBody).subscribe((res)=>{  
       console.log(res);
       
     })
@@ -76,15 +76,19 @@ export class TaskUpdateModalComponent implements OnInit {
   }
 
   close() {
+    // after creation of user close the modal
+    // this function  will set value of BehaviorSubject false
     this.modalService.closeUser('update');
   }
   observeDisplayValue(){
 
-    this.modalService.watchUser('update').subscribe((value:any)=>{
-      this.display = value;
-      console.log('update modal',value);
+    this.modalService.watchUser('update').subscribe((value:any)=>{  // watchUser is method in modal service and
+      this.display = value;                          // this function continously listen the value of Behavior Subjeect
+      // if  value is true then set ( display variable  value as true) if display value true modal will open otherwise not
+    
   });
   }
+
 
   ngOnInit() {
     this.observeDisplayValue();

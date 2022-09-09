@@ -21,8 +21,10 @@ export class CreateTaskModalComponent implements OnInit {
   form:FormGroup;  
   unAssignedUsers:any = ['any','many'];
   
+
   constructor(private fb:FormBuilder,private userService:CrudService,private router:Router,private modalService:ModalService){
-   this.form = fb.group({
+  // again this is reactive form for all input fields
+    this.form = fb.group({
      taskName:['',[Validators.required,Validators.minLength(2)]],
      leadId:['',[Validators.required]],
      projectName:['',[Validators.required]],
@@ -32,7 +34,7 @@ export class CreateTaskModalComponent implements OnInit {
     
     })
   }
-  
+  // run when click on create button in the template 
   create(){
     console.log(this.form);
     let reqName = this.form.value.assignTo;
@@ -40,20 +42,21 @@ export class CreateTaskModalComponent implements OnInit {
 
     let pipe = new DatePipe('en-US');  
 
-    const myFormattedDate = pipe.transform(this.form.value.taskDate, 'shortDate');
+    const myFormattedDate = pipe.transform(this.form.value.taskDate, 'shortDate'); // format date and remove the timesstamp from date
     console.log(myFormattedDate);
      
-    const body ={
+    const body ={   // enclose all the form variables in one JS Object 
      assigneeId:0, 
      taskName:this.form.value.taskName,
      leadId:this.form.value.leadId,
      assignTo:this.form.value.assignTo,
      taskDescription:this.form.value.taskDescription,
      taskDate:myFormattedDate,
-     projectName:this.form.value.projectName
+     projectName:this.form.value.projectName,
+     taskStatus:false
    }
 
-   for(let user of this.unAssignedUsers){
+   for(let user of this.unAssignedUsers){   
       if(user.userName == reqName){
          body.assigneeId = user._id;
       }
@@ -62,35 +65,37 @@ export class CreateTaskModalComponent implements OnInit {
    console.log(body);
    
    this.userService.post(environment.managerCreateTask, body).subscribe((response :any)=>{
-    console.log(response);
-    this.router.navigate(['/api/v1/manager/view_tasks']);    
+   
+    this.close(); // after creation of user close the modal 
+    this.router.navigate(['api/v1/manager/view_tasks']);    
   });
  
 }
  
-   observeDisplayValue(){
-    this.modalService.watchTask('create').subscribe((value:any)=>{
-      this.display = value;
-      console.log('create task modal',value);
+   observeDisplayValue(){  
+    this.modalService.watchTask('create').subscribe((value:any)=>{ // watchTask is method in modal service and 
+      this.display = value;      // this function continously listen the value of Behavior Subjeect 
+                                 // if  value is true then set ( display variable  value as true) if display value true modal will open otherwise not 
   });
   }
 
   close() {
-    this.modalService.closeTask('create');
+    this.modalService.closeTask('create');   // this function change  the value BehaviorSubject from true to flase  
   } 
   
-  fetchUnAssignedUsers(){
+  fetchUnAssignedUsers(){   // fetch all those users who has not been assigned any task yet by manager 
 
      this.userService.get(environment.unAssignedUsers).subscribe((res:any)=>{
       this.unAssignedUsers = res.unAssignedUsers;
-      console.log('from unassi frontend',res);
+  
      })
   }
 
   ngOnInit() {
-    this.observeDisplayValue();
+
+    this.observeDisplayValue(); 
     this.fetchUnAssignedUsers();
-    // console.log(this.unAssignedUsers);
+  
   }
      
 

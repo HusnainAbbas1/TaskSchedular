@@ -11,14 +11,14 @@ export class CrudService {
   
   constructor( private http: HttpClient) {}
 
+  /**@path is URL that is endpoint   */
   get(path: string) {
-    console.log('from today get  service');
-    return this.http.get(path);
+     return this.http.get(path);
   }
-   
+  
+  
   post(url: string, body: any) {
-    console.log('from http',url,body);
-     
+      
     try {
       return this.http.post(url, body);
     } catch (e: any) {
@@ -32,17 +32,10 @@ export class CrudService {
     return this.http.put(url+'/'+body.id,body);
   }
   
-  delete(url:string,body:any) {
   
-  //  return this.http.delete(url, {
-  //   headers: new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //   }),
-  //   body: { foo: body }
-  // }
-  //   );
+  delete(url:string,body:any) {
   const id = body.id;
-  return this.http.delete(url+'/'+id);
+  return this.http.delete(url+'/'+id); // append id with url 
   }
   
   isAuthenticate(){
@@ -56,9 +49,5 @@ export class CrudService {
   return 'manager';
 }
   
-  // ngOnInit(): void {
-  //   let tokenPayLoad =  this.jwtHelper.decodeToken(localStorage.getItem('token') as string);
-  //  console.log(tokenPayLoad);
-  // }  
- 
+   
 }
